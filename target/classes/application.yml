@@ -1,0 +1,23 @@
+spring: 
+   application:
+    name: spring-cloud-zuul  
+server:
+  port: 8400
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8100/eureka}
+zuul: 
+  routes:
+    user: 
+       service-id: userservice
+       path: /user/**
+       #url: http://localhost:8200/
+    note: 
+       service-id: noteservice
+       path: /note/**
+       #url: http://localhost:8300/
+    label:
+       service-id: noteservice
+       path: /label/**
+      
