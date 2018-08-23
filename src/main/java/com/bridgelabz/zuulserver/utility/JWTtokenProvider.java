@@ -3,7 +3,6 @@ package com.bridgelabz.zuulserver.utility;
 import java.util.Date;
 import javax.xml.bind.DatatypeConverter;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

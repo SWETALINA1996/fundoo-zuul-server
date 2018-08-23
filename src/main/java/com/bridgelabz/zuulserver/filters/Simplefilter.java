@@ -18,6 +18,15 @@ public class Simplefilter extends ZuulFilter {
 	public boolean shouldFilter() {
 		return true;
 	}
+	@Override
+	public String filterType() {
+		return "pre";
+	}
+
+	@Override
+	public int filterOrder() {
+		return 1;
+	}
 
 	@Override
 	public Object run() throws ZuulException {
@@ -38,17 +47,7 @@ public class Simplefilter extends ZuulFilter {
 			System.out.println("successful");
 			return "Successfully authorized";
 		}
-		return "";
+		System.out.println("out zuul");
+		return null;
 	}
-
-	@Override
-	public String filterType() {
-		return "pre";
-	}
-
-	@Override
-	public int filterOrder() {
-		return 1;
-	}
-
 }
